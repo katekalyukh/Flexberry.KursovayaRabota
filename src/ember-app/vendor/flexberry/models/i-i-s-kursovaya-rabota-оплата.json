@@ -1,0 +1,148 @@
+﻿{
+  "name": "IISKursovayaRabotaОплата",
+  "modelName": "i-i-s-kursovaya-rabota-оплата",
+  "className": "Оплата",
+  "nameSpace": "IIS.KursovayaRabota",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "видОплаты",
+      "type": "i-i-s-kursovaya-rabota-тип-оплаты",
+      "flexberryType": "ТипОплаты",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "времяОплаты",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "датаОплаты",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "печатьФото",
+      "relatedTo": "i-i-s-kursovaya-rabota-печать-фото",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ОплатаE",
+      "modelName": "i-i-s-kursovaya-rabota-оплата",
+      "attrs": [
+        {
+          "name": "датаОплаты",
+          "caption": "Дата оплаты",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "времяОплаты",
+          "caption": "Время оплаты",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "видОплаты",
+          "caption": "Вид оплаты",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "НомерЗаказа",
+          "lookupValueField": "номерЗаказа",
+          "relationName": "ПечатьФото",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "номерЗаказа",
+              "caption": "Номер заказа",
+              "hidden": true,
+              "index": 4
+            }
+          ],
+          "index": 3,
+          "type": "standard",
+          "caption": "Печать фото",
+          "name": "печатьФото",
+          "relatedTo": "i-i-s-kursovaya-rabota-печать-фото",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "ОплатаL",
+      "modelName": "i-i-s-kursovaya-rabota-оплата",
+      "attrs": [
+        {
+          "name": "датаОплаты",
+          "caption": "Дата оплаты",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "времяОплаты",
+          "caption": "Время оплаты",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "видОплаты",
+          "caption": "Вид оплаты",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ПечатьФото",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "номерЗаказа",
+              "caption": "Номер заказа",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Номер заказа",
+          "name": "печатьФото",
+          "relatedTo": "i-i-s-kursovaya-rabota-печать-фото",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

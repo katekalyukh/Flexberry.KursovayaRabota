@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistencehttp://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="Olingo4PG">
+        <class>KursovayaRabota.model.Fotokiosk</class>
+        <class>KursovayaRabota.model.Oplata</class>
+        <class>KursovayaRabota.model.ProverkaKioska</class>
+        <class>KursovayaRabota.model.Operator</class>
+        <class>KursovayaRabota.model.PechatFoto</class>
+        <class>KursovayaRabota.model.Klient</class>
+        <class>KursovayaRabota.model.Korrekciya</class>
+        <class>KursovayaRabota.model.FlexberryAdvLimit</class>
+        <class>KursovayaRabota.model.NewPlatformFlexberryFlexberryUserSetting</class>
+        <class>KursovayaRabota.model.NewPlatformFlexberryServicesLock</class>
+        <class>KursovayaRabota.model.IISCaseberryLoggingObjectsApplicationLog</class>
+
+    </persistence-unit>
+</persistence>

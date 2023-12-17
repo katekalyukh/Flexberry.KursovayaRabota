@@ -1,0 +1,124 @@
+<h3 class="ui header">{{t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.оператор-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.оператор
+      displayAttributeName="фИО"
+      autocomplete=true
+      relationName="оператор"
+      projection="ОператорL"
+      title=(t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.оператор-caption")
+      readonly=readonly
+      componentName="операторLookup"
+      class=(if (v-get validationModel "оператор" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-rabota-проверка-киоска-e-оператор=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "оператор" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.оператор.кодВхода
+      class=(if (v-get validationModel.оператор "кодВхода" "isInvalid") "error")
+      label=(t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.оператор.кодВхода-caption")
+      data-test-i-i-s-kursovaya-rabota-проверка-киоска-e-оператор-кодВхода=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.оператор "кодВхода" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.фотокиоск-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.фотокиоск
+      displayAttributeName="наименование"
+      autocomplete=true
+      relationName="фотокиоск"
+      projection="ФотокиоскL"
+      title=(t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.фотокиоск-caption")
+      readonly=readonly
+      componentName="фотокиоскLookup"
+      class=(if (v-get validationModel "фотокиоск" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-rabota-проверка-киоска-e-фотокиоск=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "фотокиоск" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.картЗаправ-caption"}}</label>
+    {{flexberry-checkbox
+      readonly=readonly
+      value=model.картЗаправ
+      class=(if (v-get validationModel "картЗаправ" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-rabota-проверка-киоска-e-картЗаправ=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "картЗаправ" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.бумага-caption"}}</label>
+    {{flexberry-checkbox
+      readonly=readonly
+      value=model.бумага
+      class=(if (v-get validationModel "бумага" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-rabota-проверка-киоска-e-бумага=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "бумага" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.датаПроверки-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.датаПроверки
+      class=(if (v-get validationModel "датаПроверки" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-rabota-проверка-киоска-e-датаПроверки=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "датаПроверки" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.времяПроверки
+      class=(if (v-get validationModel "времяПроверки" "isInvalid") "error")
+      label=(t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.времяПроверки-caption")
+      data-test-i-i-s-kursovaya-rabota-проверка-киоска-e-времяПроверки=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "времяПроверки" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-rabota-проверка-киоска-e.готовКРаботе-caption"}}</label>
+    {{flexberry-checkbox
+      readonly=readonly
+      value=model.готовКРаботе
+      class=(if (v-get validationModel "готовКРаботе" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-rabota-проверка-киоска-e-готовКРаботе=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "готовКРаботе" "message")}}
+  </div>
+</form>

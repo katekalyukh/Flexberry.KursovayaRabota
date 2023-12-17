@@ -1,0 +1,8 @@
+﻿{
+  "nameSpace": "IIS.KursovayaRabota",
+  "className": "ТипОплаты",
+  "enumObjects": {
+    "Наличные": "Наличные",
+    "QrКод": "Qr код"
+  }
+}
